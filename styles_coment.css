@@ -1,0 +1,280 @@
+/* =========================================================
+   🌟 ESTILOS COMPLETOS DE LA TARJETA "LINK IN BIO"
+   ---------------------------------------------------------
+   Versión simplificada sin variables CSS.
+   Comentada línea por línea para uso educativo.
+   ========================================================= */
+
+
+/* =========================================================
+   🔹 RESETEO BÁSICO Y CONFIGURACIÓN GLOBAL
+   ========================================================= */
+
+/* 
+   box-sizing: border-box asegura que el padding y el borde
+   se incluyan dentro del ancho y alto total de los elementos.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+   html y body ocupan toda la altura de la pantalla
+   y eliminamos los márgenes por defecto.
+*/
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/*
+   Fuente base, color de texto y color de fondo principal.
+   Aquí se define la tipografía y los tonos oscuros.
+*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0b0b14; /* fondo principal (negro azulado) */
+  color: #e9e9f6;            /* texto principal (gris claro) */
+}
+
+
+/* =========================================================
+   🔹 CONTENEDOR GENERAL: CENTRA LA TARJETA
+   ========================================================= */
+
+/*
+   .wrap es el contenedor que centra todo el contenido 
+   vertical y horizontalmente usando display: grid.
+*/
+.wrap {
+  display: grid;
+  place-items: center; /* centra horizontal y verticalmente */
+  min-height: 100vh;   /* ocupa toda la altura visible */
+  padding: 24px;
+}
+
+
+/* =========================================================
+   🔹 TARJETA PRINCIPAL
+   ========================================================= */
+
+.card {
+  background-color: #141427;       /* color de fondo de la tarjeta */
+  border: 1px solid #2a2a44;       /* borde suave oscuro */
+  border-radius: 20px;             /* esquinas redondeadas */
+  padding: 28px 22px;              /* espacio interno */
+  max-width: 460px;                /* límite de ancho máximo */
+  width: 100%;                     /* ocupa el ancho disponible */
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4); /* sombra para elevar la tarjeta */
+}
+
+
+/* =========================================================
+   🔹 AVATAR (IMAGEN DE PERFIL)
+   ========================================================= */
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px;             /* centrado y espacio inferior */
+  border-radius: 50%;              /* forma circular */
+  overflow: hidden;                /* recorta lo que sobresalga del círculo */
+  border: 2px solid rgba(46, 203, 255, 0.6); /* borde cian tenue */
+}
+
+/*
+   La imagen ocupa todo el contenedor sin deformarse.
+   object-fit: cover recorta y ajusta la foto correctamente.
+*/
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* elimina espacios indeseados alrededor de la imagen */
+}
+
+
+/* =========================================================
+   🔹 TÍTULOS Y TEXTOS
+   ========================================================= */
+
+/* Título principal (nombre) */
+.title {
+  text-align: center;
+  margin: 4px 0;
+  font-weight: bold;
+  font-size: 1.35rem;
+}
+
+/* Subtítulo (profesión o roles) */
+.subtitle {
+  text-align: center;
+  margin: 0 0 12px;
+  color: #a7a7c7; /* tono gris violeta para contraste suave */
+}
+
+/* Biografía o descripción corta */
+.bio {
+  text-align: center;
+  margin: 10px auto 16px;
+  line-height: 1.55; /* mejora la lectura */
+  max-width: 44ch;   /* controla el ancho de línea ideal para leer */
+}
+
+
+/* =========================================================
+   🔹 ETIQUETAS DE ESPECIALIDAD (CHIPS)
+   ========================================================= */
+
+/*
+   .tags usa flexbox para organizar las etiquetas en fila
+   y permite que salten de línea si no caben.
+*/
+.tags {
+  display: flex;
+  flex-wrap: wrap;         /* permite salto de línea */
+  justify-content: center; /* centra horizontalmente */
+  gap: 8px;                /* espacio entre las etiquetas */
+  margin-bottom: 18px;
+}
+
+/*
+   Cada .chip es una etiqueta tipo "píldora"
+   con fondo suave y borde redondeado.
+*/
+.chip {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  border-radius: 999px; /* hace que el borde sea totalmente redondeado */
+  color: #cfefff;       /* texto claro */
+  background-color: rgba(46, 203, 255, 0.08); /* fondo translúcido */
+  border: 1px solid rgba(46, 203, 255, 0.35); /* borde cian suave */
+}
+
+
+/* =========================================================
+   🔹 BOTONES PRINCIPALES (ENLACES)
+   ========================================================= */
+
+/*
+   .links organiza los botones verticalmente con espacio entre ellos.
+*/
+.links {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/*
+   .btn define el estilo base para todos los botones:
+   - color de fondo
+   - tipografía
+   - sombra
+   - efecto hover
+*/
+.btn {
+  display: flex;
+  align-items: center;    /* centra verticalmente el texto dentro del botón */
+  justify-content: center;/* centra horizontalmente */
+  text-decoration: none;  /* elimina subrayado */
+  color: #ffffff;         /* texto blanco */
+  background-color: #7a5cf5; /* color lila principal */
+  border: none;
+  border-radius: 14px;    /* esquinas suaves */
+  padding: 14px 16px;
+  font-weight: bold;
+  box-shadow: 0 6px 16px rgba(122, 92, 245, 0.28); /* sombra violeta tenue */
+  transition: all 0.15s ease; /* suaviza animaciones */
+}
+
+/*
+   🔸 SEUDOCLASE :hover
+   - Se aplica cuando el ratón pasa por encima del botón.
+   - Da sensación de elevación y respuesta.
+*/
+.btn:hover {
+  transform: translateY(-1px); /* sube ligeramente el botón */
+  box-shadow: 0 10px 20px rgba(122, 92, 245, 0.36);
+}
+
+/*
+   Variante de botón con contorno (sin fondo):
+   - usado para el botón "Contacto rápido".
+*/
+.btn--ghost {
+  background-color: transparent;    /* fondo transparente */
+  color: #e9e9f6;                   /* texto claro */
+  border: 1.5px solid #2ecbff;      /* borde cian */
+  box-shadow: none;                 /* sin sombra */
+}
+
+/*
+   SEUDOCLASE :hover en botón ghost:
+   cambia el fondo ligeramente para destacar.
+*/
+.btn--ghost:hover {
+  background-color: rgba(46, 203, 255, 0.08);
+}
+
+
+/* =========================================================
+   🔹 SECCIÓN DE CONTACTO (3 BOTONES EN LÍNEA)
+   ========================================================= */
+
+/*
+   .contact usa grid con 3 columnas iguales para
+   mantener los tres botones alineados horizontalmente.
+*/
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* tres columnas del mismo tamaño */
+  gap: 10px; /* separación entre columnas */
+  margin-top: 16px;
+}
+
+/*
+   .btn.small reutiliza el estilo base de .btn
+   pero con tamaño más compacto para los botones finales.
+*/
+.btn.small {
+  background-color: #7a5cf5;
+  color: #ffffff;
+  padding: 12px 10px; /* un poco más pequeño */
+  font-size: 0.9rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(122, 92, 245, 0.25);
+}
+
+/*
+   :hover también se aplica aquí, igual que en los principales.
+   Esto mantiene la coherencia visual.
+*/
+.btn.small:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(122, 92, 245, 0.35);
+}
+
+
+/* =========================================================
+   🔹 RESPONSIVE DESIGN (ADAPTACIÓN A MÓVILES)
+   ========================================================= */
+
+/*
+   En pantallas pequeñas, hacemos que los botones de contacto
+   se apilen verticalmente en lugar de ocupar 3 columnas.
+*/
+@media (max-width: 420px) {
+  .contact {
+    grid-template-columns: 1fr; /* una columna */
+  }
+}
+
+/*
+   A partir de 560px de ancho (tabletas o escritorio):
+   - Aumento el tamaño del título
+   - Hago la bio un poco más grande
+*/
+@media (min-width: 560px) {
+  .title { font-size: 1.45rem; }
+  .bio { font-size: 1rem; }
+}

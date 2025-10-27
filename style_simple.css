@@ -1,0 +1,161 @@
+/* =========================================================
+   ESTILOS SIMPLIFICADOS - SIN VARIABLES NI SELECTORES AVANZADOS
+   ========================================================= */
+
+/* Reset y base */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0b0b14; /* fondo principal */
+  color: #e9e9f6;           /* texto principal */
+}
+
+/* Centrado general */
+.wrap {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* Tarjeta */
+.card {
+  background-color: #141427;       /* fondo de la tarjeta */
+  border: 1px solid #2a2a44;       /* borde oscuro */
+  border-radius: 20px;
+  padding: 28px 22px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Avatar */
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(46, 203, 255, 0.6);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Títulos y texto */
+.title {
+  text-align: center;
+  margin: 4px 0;
+  font-weight: bold;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 12px;
+  color: #a7a7c7; /* gris suave */
+}
+
+.bio {
+  text-align: center;
+  margin: 10px auto 16px;
+  line-height: 1.55;
+  max-width: 44ch; /* control de ancho de lectura */
+}
+
+/* Etiquetas */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.chip {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  color: #cfefff;
+  background-color: rgba(46, 203, 255, 0.08);
+  border: 1px solid rgba(46, 203, 255, 0.35);
+}
+
+/* Botones principales */
+.links {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #7a5cf5; /* lila principal */
+  border: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-weight: bold;
+  box-shadow: 0 6px 16px rgba(122, 92, 245, 0.28);
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(122, 92, 245, 0.36);
+}
+
+/* Botón contorno (ghost) */
+.btn--ghost {
+  background-color: transparent;
+  color: #e9e9f6;
+  border: 1.5px solid #2ecbff;
+  box-shadow: none;
+}
+
+.btn--ghost:hover {
+  background-color: rgba(46, 203, 255, 0.08);
+}
+
+/* CONTACTO (3 BOTONES EN LÍNEA) */
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn.small {
+  background-color: #7a5cf5;
+  color: #ffffff;
+  padding: 12px 10px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(122, 92, 245, 0.25);
+}
+
+.btn.small:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(122, 92, 245, 0.35);
+}
+
+/* En móvil: apilar botones de contacto */
+@media (max-width: 420px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes en pantallas medianas */
+@media (min-width: 560px) {
+  .title { font-size: 1.45rem; }
+  .bio { font-size: 1rem; }
+}

@@ -1,0 +1,180 @@
+/* =========================================================
+   VARIABLES DE COLOR
+   ========================================================= */
+:root {
+  --bg-1: #0b0b14;
+  --bg-2: #141427;
+  --text: #e9e9f6;
+  --muted: #a7a7c7;
+  --accent: #7a5cf5;
+  --accent-2: #2ecbff;
+  --border: #2a2a44;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  background: var(--bg-1);
+  color: var(--text);
+}
+
+/* =========================================================
+   CENTRADO GENERAL
+   ========================================================= */
+.wrap {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* =========================================================
+   TARJETA PRINCIPAL
+   ========================================================= */
+.card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 22px;
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(46,203,255,0.6);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+.title {
+  text-align: center;
+  margin: 4px 0;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+.subtitle {
+  text-align: center;
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+.bio {
+  text-align: center;
+  margin: 10px auto 16px;
+  line-height: 1.55;
+  max-width: 44ch;
+}
+
+/* =========================================================
+   ETIQUETAS
+   ========================================================= */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.chip {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  border-radius: 999px;
+  color: #cfefff;
+  background: rgba(46,203,255,0.08);
+  border: 1px solid rgba(46,203,255,0.35);
+}
+
+/* =========================================================
+   BOTONES PRINCIPALES
+   ========================================================= */
+.links {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(122,92,245,0.28);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(122,92,245,0.36);
+}
+
+/* Botón “ghost” */
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--accent-2);
+  box-shadow: none;
+}
+.btn--ghost:hover {
+  background: rgba(46,203,255,0.08);
+}
+
+/* =========================================================
+   CONTACTO (3 BOTONES EN LÍNEA)
+   ========================================================= */
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.contact .btn.small {
+  background: var(--accent);
+  padding: 12px 10px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(122,92,245,0.25);
+  color: #fff;
+  font-weight: 600;
+}
+.contact .btn.small:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(122,92,245,0.35);
+}
+
+/* En pantallas pequeñas, apilamos */
+@media (max-width: 420px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (min-width: 560px) {
+  .title { font-size: 1.45rem; }
+  .bio { font-size: 1rem; }
+}
